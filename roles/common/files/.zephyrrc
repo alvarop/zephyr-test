@@ -1,0 +1,2 @@
+export ZEPHYR_GCC_VARIANT=zephyr
+export ZEPHYR_SDK_INSTALL_DIR=/home/vagrant/zephyr-sdk

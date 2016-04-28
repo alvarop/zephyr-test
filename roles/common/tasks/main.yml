@@ -11,6 +11,7 @@
     - g++
     - libc6-dev-i386
     - g++-multilib
+    - libncurses5-dev
 
 # Specifying destination file name, since having a destination directory makes it re-download the file every time
 - name: Download Zephyr SDK

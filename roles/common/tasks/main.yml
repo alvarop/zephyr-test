@@ -34,7 +34,12 @@
 - name: copy ~/.zephyrrc
   copy: src=roles/common/files/.zephyrrc dest=/home/vagrant
 
+- name: Check if zephyr-project exists
+  stat: path=/vagrant/zephyr-project
+  register: zephyr_project_dir
+
 - name: clone zephyr-project repo
+  when: not zephyr_project_dir.stat.exists
   git:  repo=https://gerrit.zephyrproject.org/r/zephyr
-        dest=/home/vagrant/zephyr-project
+        dest=/vagrant/zephyr-project
         version=tags/v1.2.0

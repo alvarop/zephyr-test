@@ -23,6 +23,6 @@ This project is meant to get all of the [zephyr](https://www.zephyrproject.org) 
 See the Zephyr [Application Development Primer](https://www.zephyrproject.org/doc/application/application.html) for more info
 
 1. (Inside vagrant VM) `cd /vagrant/test_app`
-1. To make sure the environment is setup, `source /home/vagrant/zephyr-project/zephyr-env.sh`
+1. To make sure the environment is setup, `source /vagrant/zephyr-project/zephyr-env.sh`
 1. To build project `make`
 1. To run inside QEMU `make qemu`

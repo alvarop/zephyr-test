@@ -1,5 +1,5 @@
 - name: update apt cache
-  apt: update_cache=yes
+  apt: update_cache=yes cache_valid_time=3600
   become: yes
 
 - name: Install Zephyr Requirements
@@ -43,3 +43,6 @@
   git:  repo=https://gerrit.zephyrproject.org/r/zephyr
         dest=/vagrant/zephyr-project
         version=tags/v1.2.0
+
+- name: Add zephyr config to ~/.profile
+  lineinfile: dest=/home/vagrant/.profile line='source /vagrant/zephyr-project/zephyr-env.sh'

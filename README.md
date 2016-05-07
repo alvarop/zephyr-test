@@ -1,6 +1,8 @@
 # Zephyr Dev
 
-This project is meant to get all of the [zephyr](https://www.zephyrproject.org) development tools setup inside a virtual machine for ease of development.
+This project is meant to get all of the [Zephyr](https://www.zephyrproject.org) development tools setup inside a virtual machine for ease of development.
+
+I mostly use it for Zephyr development on OSX without having to set up a case sensitive file system. It also helps set up a working development environment on a new machine in minutes.
 
 ## Installation
 

@@ -1,5 +1,5 @@
-zephyr-project/
 downloads/
 outdir/
+.vagrant/
 *.o
 *.cmd

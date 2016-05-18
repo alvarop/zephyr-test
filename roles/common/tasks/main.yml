@@ -42,7 +42,7 @@
   when: not zephyr_project_dir.stat.exists
   git:  repo=https://gerrit.zephyrproject.org/r/zephyr
         dest=/vagrant/zephyr-project
-        version=tags/v1.2.0
+        version=tags/v1.3.0
 
 - name: Add zephyr config to ~/.profile
   lineinfile: dest=/home/vagrant/.profile line='source /vagrant/zephyr-project/zephyr-env.sh'

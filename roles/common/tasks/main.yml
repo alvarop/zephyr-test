@@ -20,16 +20,17 @@
 
 # Specifying destination file name, since having a destination directory makes it re-download the file every time
 - name: Download Zephyr SDK
-  get_url:  url=https://nexus.zephyrproject.org/content/repositories/releases/org/zephyrproject/zephyr-sdk/0.7.5-i686/zephyr-sdk-0.7.5-i686-setup.run
-            dest=/vagrant/downloads/zephyr-sdk-0.7.5-i686-setup.run
+  get_url:  url=https://nexus.zephyrproject.org/content/repositories/releases/org/zephyrproject/zephyr-sdk/0.9/zephyr-sdk-0.9-setup.run
+            dest=/vagrant/downloads/zephyr-sdk-0.9-setup.run
             mode=0775
             force=no
+            validate_certs=no
 
 # Need to echo install directory since it always prompts for it and we can't pass as an argument
 - name: Install SDK
-  shell: echo '/home/vagrant/zephyr-sdk/' | /vagrant/downloads/zephyr-sdk-0.7.5-i686-setup.run
+  shell: echo '/home/vagrant/zephyr-sdk/' | /vagrant/downloads/zephyr-sdk-0.9-setup.run
   args:
-    creates: /home/vagrant/zephyr-sdk 
+    creates: /home/vagrant/zephyr-sdk
 
 - name: copy ~/.zephyrrc
   copy: src=roles/common/files/.zephyrrc dest=/home/vagrant
@@ -42,7 +43,7 @@
   when: not zephyr_project_dir.stat.exists
   git:  repo=https://gerrit.zephyrproject.org/r/zephyr
         dest=/vagrant/zephyr-project
-        version=tags/v1.3.0
+        version=tags/v1.7.0
 
 - name: Add zephyr config to ~/.profile
   lineinfile: dest=/home/vagrant/.profile line='source /vagrant/zephyr-project/zephyr-env.sh'
